@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d0f423b7-2b0f-4c02-8a21-0ffcf1332070">
+	<property name="ireport.zoom" value="1.1"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     tb_mapel.`Kode_Mapel` AS tb_mapel_Kode_Mapel,
+     tb_mapel.`Nama_Mapel` AS tb_mapel_Nama_Mapel,
+     tb_mapel.`NIP` AS tb_mapel_NIP,
+     tb_mapel.`Nama_Guru` AS tb_mapel_Nama_Guru
+FROM
+     `tb_mapel` tb_mapel]]>
+	</queryString>
+	<field name="tb_mapel_Kode_Mapel" class="java.lang.String"/>
+	<field name="tb_mapel_Nama_Mapel" class="java.lang.String"/>
+	<field name="tb_mapel_NIP" class="java.lang.String"/>
+	<field name="tb_mapel_Nama_Guru" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="125" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="727" y="-20" width="95" height="20" forecolor="#736343" uuid="838bc95f-a61e-42c9-a87e-dfa0b69700a6"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="17" y="2" width="100" height="100" uuid="283f7846-af1e-40d6-a212-d0081999b721"/>
+				<imageExpression><![CDATA["C:\\Users\\Lenovo\\OneDrive\\Dokumen\\NetBeansProjects\\TKAlfajr\\src\\img\\logo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="156" y="0" width="552" height="62" forecolor="#043B5C" uuid="ee5b45de-0278-4ddd-9643-c28123ff07af"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[TK Mardiyyatuzziyadah]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="228" y="62" width="383" height="42" uuid="9eb7669c-396c-44fb-9363-8c74a82fa861"/>
+				<textElement textAlignment="Center">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[JL. Buncit Raya Pulo. 25A 9 RT.10/RW.05
+Kali Bata, Jakarta Selatan]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="802" height="1" uuid="d63fff12-3183-4031-8f11-6a9702d2847b"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="200" height="15" forecolor="#736343" uuid="88917742-ca72-4a74-820f-0dd3b39d4f4c"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Kode Mapel]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="200" y="0" width="200" height="15" forecolor="#736343" uuid="2d314553-b939-4f2f-b631-625e2577ddb9"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Nama Mapel]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="400" y="0" width="200" height="15" forecolor="#736343" uuid="6a772f1e-c97e-40bb-9439-97f35956f3bd"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Mapel NIP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="600" y="0" width="200" height="15" forecolor="#736343" uuid="ad481472-9051-46b5-a5cb-228b19fc30ba"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Nama Guru Mapel]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="802" height="15" uuid="25537eb5-90dd-45c7-b8f4-14003152c392"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="0" y="0" width="200" height="15" uuid="4dd95a6d-2a93-4b67-b6cc-0ddc8c92e4c8"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{tb_mapel_Kode_Mapel}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="200" y="0" width="200" height="15" uuid="5205f3f1-6177-41c7-8ac7-106c328e2746"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{tb_mapel_Nama_Mapel}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="400" y="0" width="200" height="15" uuid="d4673f9f-021b-4267-a30e-f310f81b724d"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{tb_mapel_NIP}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="600" y="0" width="200" height="15" uuid="786a0a84-8eb2-4149-9d56-e0b9b5556cb6"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{tb_mapel_Nama_Guru}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="6" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="802" height="1" uuid="02e65557-1894-48ff-ad1d-3d2868533f12"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="111" splitType="Stretch">
+			<staticText>
+				<reportElement x="625" y="91" width="175" height="20" uuid="44c377b1-ecba-42e1-ae7c-1b6302adb42f"/>
+				<text><![CDATA[NIP. ...............................................................]]></text>
+			</staticText>
+			<textField pattern="yyyy">
+				<reportElement x="772" y="8" width="28" height="20" uuid="5344ee1a-1437-4406-83f5-3fdef4c108ff"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="625" y="8" width="147" height="20" uuid="a7b7c850-d363-494d-ae34-25a67a1b6fd3"/>
+				<text><![CDATA[......................., ..........................				]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="625" y="71" width="175" height="20" uuid="a2519939-e4d6-4beb-a27b-000c20027dad"/>
+				<text><![CDATA[____________________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="625" y="22" width="147" height="20" uuid="09225ffe-45ed-4f32-862b-a3092694ab13"/>
+				<text><![CDATA[Kepala Sekolah,]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

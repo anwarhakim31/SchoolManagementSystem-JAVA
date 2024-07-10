@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4ff117ee-9c3d-4d63-847b-c11de31adb27">
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     tb_siswa.`NIP` AS tb_siswa_NIP,
+     tb_siswa.`Nama_Siswa` AS tb_siswa_Nama_Siswa,
+     tb_siswa.`Tanggal_Lahir` AS tb_siswa_Tanggal_Lahir,
+     tb_siswa.`Agama` AS tb_siswa_Agama,
+     tb_siswa.`Alamat` AS tb_siswa_Alamat,
+     tb_siswa.`Jenis_Kelamin` AS tb_siswa_Jenis_Kelamin
+FROM
+     `tb_siswa` tb_siswa]]>
+	</queryString>
+	<field name="tb_siswa_NIP" class="java.lang.String"/>
+	<field name="tb_siswa_Nama_Siswa" class="java.lang.String"/>
+	<field name="tb_siswa_Tanggal_Lahir" class="java.lang.String"/>
+	<field name="tb_siswa_Agama" class="java.lang.String"/>
+	<field name="tb_siswa_Alamat" class="java.lang.String"/>
+	<field name="tb_siswa_Jenis_Kelamin" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
